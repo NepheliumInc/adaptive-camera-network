@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4FFABC7B1B2B1D9C00926144 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC7A1B2B1D9C00926144 /* main.cpp */; };
+		4FFABC941B2B1E0900926144 /* DetectAcrossFrames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC821B2B1E0800926144 /* DetectAcrossFrames.cpp */; };
+		4FFABC951B2B1E0900926144 /* FeatureExtractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC841B2B1E0800926144 /* FeatureExtractor.cpp */; };
+		4FFABC961B2B1E0900926144 /* HaarObjectDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC871B2B1E0800926144 /* HaarObjectDetection.cpp */; };
+		4FFABC971B2B1E0900926144 /* HarrisCorner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC881B2B1E0800926144 /* HarrisCorner.cpp */; };
+		4FFABC981B2B1E0900926144 /* infgen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC8A1B2B1E0800926144 /* infgen.cpp */; };
+		4FFABC991B2B1E0900926144 /* InsideBlob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC8C1B2B1E0800926144 /* InsideBlob.cpp */; };
+		4FFABC9A1B2B1E0900926144 /* main2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC8D1B2B1E0800926144 /* main2.cpp */; };
+		4FFABC9B1B2B1E0900926144 /* ProBlobDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC8F1B2B1E0900926144 /* ProBlobDetection.cpp */; };
+		4FFABC9C1B2B1E0900926144 /* TableTaken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC901B2B1E0900926144 /* TableTaken.cpp */; };
+		4FFABC9D1B2B1E0900926144 /* zpipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFABC921B2B1E0900926144 /* zpipe.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +35,24 @@
 /* Begin PBXFileReference section */
 		4FFABC771B2B1D9C00926144 /* XcodeMacFypProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XcodeMacFypProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFABC7A1B2B1D9C00926144 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4FFABC821B2B1E0800926144 /* DetectAcrossFrames.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DetectAcrossFrames.cpp; path = XcodeMacFypProject/DetectAcrossFrames.cpp; sourceTree = "<group>"; };
+		4FFABC831B2B1E0800926144 /* DetectAcrossFrames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetectAcrossFrames.h; path = XcodeMacFypProject/DetectAcrossFrames.h; sourceTree = "<group>"; };
+		4FFABC841B2B1E0800926144 /* FeatureExtractor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FeatureExtractor.cpp; path = XcodeMacFypProject/FeatureExtractor.cpp; sourceTree = "<group>"; };
+		4FFABC851B2B1E0800926144 /* FeatureExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeatureExtractor.h; path = XcodeMacFypProject/FeatureExtractor.h; sourceTree = "<group>"; };
+		4FFABC861B2B1E0800926144 /* filtering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = filtering.h; path = XcodeMacFypProject/filtering.h; sourceTree = "<group>"; };
+		4FFABC871B2B1E0800926144 /* HaarObjectDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HaarObjectDetection.cpp; path = XcodeMacFypProject/HaarObjectDetection.cpp; sourceTree = "<group>"; };
+		4FFABC881B2B1E0800926144 /* HarrisCorner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HarrisCorner.cpp; path = XcodeMacFypProject/HarrisCorner.cpp; sourceTree = "<group>"; };
+		4FFABC891B2B1E0800926144 /* HarrisCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HarrisCorner.h; path = XcodeMacFypProject/HarrisCorner.h; sourceTree = "<group>"; };
+		4FFABC8A1B2B1E0800926144 /* infgen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = infgen.cpp; path = XcodeMacFypProject/infgen.cpp; sourceTree = "<group>"; };
+		4FFABC8B1B2B1E0800926144 /* infgen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = infgen.h; path = XcodeMacFypProject/infgen.h; sourceTree = "<group>"; };
+		4FFABC8C1B2B1E0800926144 /* InsideBlob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InsideBlob.cpp; path = XcodeMacFypProject/InsideBlob.cpp; sourceTree = "<group>"; };
+		4FFABC8D1B2B1E0800926144 /* main2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main2.cpp; path = XcodeMacFypProject/main2.cpp; sourceTree = "<group>"; };
+		4FFABC8E1B2B1E0900926144 /* main2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = main2.h; path = XcodeMacFypProject/main2.h; sourceTree = "<group>"; };
+		4FFABC8F1B2B1E0900926144 /* ProBlobDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProBlobDetection.cpp; path = XcodeMacFypProject/ProBlobDetection.cpp; sourceTree = "<group>"; };
+		4FFABC901B2B1E0900926144 /* TableTaken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TableTaken.cpp; path = XcodeMacFypProject/TableTaken.cpp; sourceTree = "<group>"; };
+		4FFABC911B2B1E0900926144 /* TableTaken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableTaken.h; path = XcodeMacFypProject/TableTaken.h; sourceTree = "<group>"; };
+		4FFABC921B2B1E0900926144 /* zpipe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = zpipe.cpp; path = XcodeMacFypProject/zpipe.cpp; sourceTree = "<group>"; };
+		4FFABC931B2B1E0900926144 /* zpipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zpipe.h; path = XcodeMacFypProject/zpipe.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +69,7 @@
 		4FFABC6E1B2B1D9C00926144 = {
 			isa = PBXGroup;
 			children = (
+				4FFABC811B2B1DCC00926144 /* SampleExperiments */,
 				4FFABC791B2B1D9C00926144 /* XcodeMacFypProject */,
 				4FFABC781B2B1D9C00926144 /* Products */,
 			);
@@ -60,6 +89,31 @@
 				4FFABC7A1B2B1D9C00926144 /* main.cpp */,
 			);
 			path = XcodeMacFypProject;
+			sourceTree = "<group>";
+		};
+		4FFABC811B2B1DCC00926144 /* SampleExperiments */ = {
+			isa = PBXGroup;
+			children = (
+				4FFABC821B2B1E0800926144 /* DetectAcrossFrames.cpp */,
+				4FFABC831B2B1E0800926144 /* DetectAcrossFrames.h */,
+				4FFABC841B2B1E0800926144 /* FeatureExtractor.cpp */,
+				4FFABC851B2B1E0800926144 /* FeatureExtractor.h */,
+				4FFABC861B2B1E0800926144 /* filtering.h */,
+				4FFABC871B2B1E0800926144 /* HaarObjectDetection.cpp */,
+				4FFABC881B2B1E0800926144 /* HarrisCorner.cpp */,
+				4FFABC891B2B1E0800926144 /* HarrisCorner.h */,
+				4FFABC8A1B2B1E0800926144 /* infgen.cpp */,
+				4FFABC8B1B2B1E0800926144 /* infgen.h */,
+				4FFABC8C1B2B1E0800926144 /* InsideBlob.cpp */,
+				4FFABC8D1B2B1E0800926144 /* main2.cpp */,
+				4FFABC8E1B2B1E0900926144 /* main2.h */,
+				4FFABC8F1B2B1E0900926144 /* ProBlobDetection.cpp */,
+				4FFABC901B2B1E0900926144 /* TableTaken.cpp */,
+				4FFABC911B2B1E0900926144 /* TableTaken.h */,
+				4FFABC921B2B1E0900926144 /* zpipe.cpp */,
+				4FFABC931B2B1E0900926144 /* zpipe.h */,
+			);
+			name = SampleExperiments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +172,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFABC9B1B2B1E0900926144 /* ProBlobDetection.cpp in Sources */,
+				4FFABC951B2B1E0900926144 /* FeatureExtractor.cpp in Sources */,
+				4FFABC9A1B2B1E0900926144 /* main2.cpp in Sources */,
 				4FFABC7B1B2B1D9C00926144 /* main.cpp in Sources */,
+				4FFABC9D1B2B1E0900926144 /* zpipe.cpp in Sources */,
+				4FFABC9C1B2B1E0900926144 /* TableTaken.cpp in Sources */,
+				4FFABC991B2B1E0900926144 /* InsideBlob.cpp in Sources */,
+				4FFABC961B2B1E0900926144 /* HaarObjectDetection.cpp in Sources */,
+				4FFABC941B2B1E0900926144 /* DetectAcrossFrames.cpp in Sources */,
+				4FFABC981B2B1E0900926144 /* infgen.cpp in Sources */,
+				4FFABC971B2B1E0900926144 /* HarrisCorner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
