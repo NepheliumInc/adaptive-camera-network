@@ -1,0 +1,220 @@
+_________________________________________________________________________________________________________________________
+									SIMPLE CODE TO LOAD AN IMAGE FROM FILE PATH
+-------------------------------------------------------------------------------------------------------------------------
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <iostream>
+
+using namespace cv;
+using namespace std;
+
+int main(int argc, char** argv)
+{
+	Mat image;
+	image = imread("C:\\Users\\K D K Madusanka\\Pictures\\My Photos\\Friends\\Harini Poshi Me.jpg", CV_LOAD_IMAGE_COLOR);   // Read the file
+
+	if (!image.data)									// Check for invalid input
+	{
+		cout << "Could not open or find the image" << std::endl;
+		return -1;
+	}
+	else
+	{
+		cout << "Loading image" << std::endl;
+	}
+
+	namedWindow("Display window", WINDOW_NORMAL);		// Create a window for display.
+	imshow("Display window", image);					// Show our image inside it.
+
+	waitKey(0);                                         // Wait for a keystroke in the window
+	return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
+#########################################################################################################################
+_________________________________________________________________________________________________________________________
+									mouse pointer tracking with Kalman Filter
+-------------------------------------------------------------------------------------------------------------------------
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <iostream>
+
+#include <opencv2\video\tracking.hpp>	
+#include <Windows.h>	//for windows users to use GetCursorPos function
+
+#define drawCross(center, color, d)\
+line(img, Point(center.x - d, center.y - d), Point(center.x + d, center.y + d), color, 2, CV_AA, 0);\
+line(img, Point(center.x + d, center.y - d), Point(center.x - d, center.y + d), color, 2, CV_AA, 0)
+
+using namespace cv;
+using namespace std;
+
+int main(int argc, char** argv)
+{
+	KalmanFilter KF(4, 2, 0);
+	POINT mousePos;
+	GetCursorPos(&mousePos);
+
+	// intialization of KF...
+	KF.transitionMatrix = *(Mat_<float>(4, 4) << 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1);
+	Mat_<float> measurement(2, 1); measurement.setTo(Scalar(0));
+
+	KF.statePre.at<float>(0) = mousePos.x;
+	KF.statePre.at<float>(1) = mousePos.y;
+	KF.statePre.at<float>(2) = 0;
+	KF.statePre.at<float>(3) = 0;
+	setIdentity(KF.measurementMatrix);
+	setIdentity(KF.processNoiseCov, Scalar::all(1e-4));
+	setIdentity(KF.measurementNoiseCov, Scalar::all(10));
+	setIdentity(KF.errorCovPost, Scalar::all(.1));
+	// Image to show mouse tracking
+	Mat img(600, 800, CV_8UC3);
+	vector<Point> mousev, kalmanv;
+	mousev.clear();
+	kalmanv.clear();
+
+	while (1)
+	{
+		// First predict, to update the internal statePre variable
+		Mat prediction = KF.predict();
+		Point predictPt(prediction.at<float>(0), prediction.at<float>(1));
+
+		// Get mouse point
+		GetCursorPos(&mousePos);
+		measurement(0) = mousePos.x;
+		measurement(1) = mousePos.y;
+
+		// The update phase 
+		Mat estimated = KF.correct(measurement);
+
+		Point statePt(estimated.at<float>(0), estimated.at<float>(1));
+		Point measPt(measurement(0), measurement(1));
+		// plot points
+		imshow("mouse kalman", img);
+		img = Scalar::all(0);
+
+		mousev.push_back(measPt);
+		kalmanv.push_back(statePt);
+		drawCross(statePt, Scalar(255, 255, 255), 5);
+		drawCross(measPt, Scalar(0, 0, 255), 5);
+
+		for (int i = 0; i < mousev.size() - 1; i++)
+			line(img, mousev[i], mousev[i + 1], Scalar(255, 255, 0), 1);
+
+		for (int i = 0; i < kalmanv.size() - 1; i++)
+			line(img, kalmanv[i], kalmanv[i + 1], Scalar(0, 155, 255), 1);
+
+		waitKey(10);
+	}
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------
+
+#########################################################################################################################
+_________________________________________________________________________________________________________________________
+									another Kalman filter test with some old code
+-------------------------------------------------------------------------------------------------------------------------
+
+#include <opencv\cv.hpp>	//for rand functions - old***
+
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <iostream>
+
+#include <opencv2\video\tracking.hpp>	
+#include <Windows.h>	//for windows users to use GetCursorPos function
+
+
+using namespace cv;
+using namespace std;
+
+int main(int argc, char** argv)
+{
+	// Initialize Kalman filter object, window, number generator, etc
+	cvNamedWindow("Kalman", 1);
+	CvRandState rng;
+	cvRandInit(&rng, 0, 1, -1, CV_RAND_UNI);
+
+	IplImage* img = cvCreateImage(cvSize(500, 500), 8, 3);
+	CvKalman* kalman = cvCreateKalman(2, 1, 0);
+
+	// State is phi, delta_phi - angle and angular velocity
+	// Initialize with random guess
+	CvMat* x_k = cvCreateMat(2, 1, CV_32FC1);
+	cvRandSetRange(&rng, 0, 0.1, 0);
+	rng.disttype = CV_RAND_NORMAL;
+	cvRand(&rng, x_k);
+
+	// Process noise
+	CvMat* w_k = cvCreateMat(2, 1, CV_32FC1);
+
+	// Measurements, only one parameter for angle
+	CvMat* z_k = cvCreateMat(1, 1, CV_32FC1);
+	cvZero(z_k);
+
+	// Transition matrix F describes model parameters at and k and k+1
+	const float F[] = { 1, 1, 0, 1 };
+	memcpy(kalman->transition_matrix->data.fl, F, sizeof(F));
+
+	// Initialize other Kalman parameters
+	cvSetIdentity(kalman->measurement_matrix, cvRealScalar(1));
+	cvSetIdentity(kalman->process_noise_cov, cvRealScalar(1e-5));
+	cvSetIdentity(kalman->measurement_noise_cov, cvRealScalar(1e-1));
+	cvSetIdentity(kalman->error_cov_post, cvRealScalar(1));
+
+	// Choose random initial state
+	cvRand(&rng, kalman->state_post);
+
+	// Make colors
+	CvScalar yellow = CV_RGB(255, 255, 0);
+	CvScalar white = CV_RGB(255, 255, 255);
+	CvScalar red = CV_RGB(255, 0, 0);
+
+	while (1){
+		// Predict point position
+		const CvMat* y_k = cvKalmanPredict(kalman, 0);
+
+		// Generate Measurement (z_k)
+		cvRandSetRange(&rng, 0, sqrt(kalman->measurement_noise_cov->data.fl[0]), 0);
+		cvRand(&rng, z_k);
+		cvMatMulAdd(kalman->measurement_matrix, x_k, z_k, z_k);
+
+		// Plot Points
+		cvZero(img);
+		// Yellow is observed state
+		cvCircle(img,
+			cvPoint(cvRound(img->width / 2 + img->width / 3 * cos(z_k->data.fl[0])),
+			cvRound(img->height / 2 - img->width / 3 * sin(z_k->data.fl[0]))),
+			4, yellow);
+		// White is the predicted state via the filter
+		cvCircle(img,
+			cvPoint(cvRound(img->width / 2 + img->width / 3 * cos(y_k->data.fl[0])),
+			cvRound(img->height / 2 - img->width / 3 * sin(y_k->data.fl[0]))),
+			4, white, 2);
+		// Red is the real state
+		cvCircle(img,
+			cvPoint(cvRound(img->width / 2 + img->width / 3 * cos(x_k->data.fl[0])),
+			cvRound(img->height / 2 - img->width / 3 * sin(x_k->data.fl[0]))),
+			4, red);
+		cvShowImage("Kalman", img);
+
+		// Adjust Kalman filter state
+		cvKalmanCorrect(kalman, z_k);
+
+		// Apply the transition matrix F and apply "process noise" w_k
+		cvRandSetRange(&rng, 0, sqrt(kalman->process_noise_cov->data.fl[0]), 0);
+		cvRand(&rng, w_k);
+		cvMatMulAdd(kalman->transition_matrix, x_k, w_k, x_k);
+
+		// Exit on esc key
+		if (cvWaitKey(100) == 27)
+			break;
+	}
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------
+
+#########################################################################################################################

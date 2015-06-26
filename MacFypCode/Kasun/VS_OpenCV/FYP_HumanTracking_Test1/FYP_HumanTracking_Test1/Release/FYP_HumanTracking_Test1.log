@@ -1,0 +1,11 @@
+﻿Build started 4/16/2015 12:56:37 PM.
+     1>Project "E:\Final Year\project\human tracking\coding\VS_OpenCV\FYP_HumanTracking_Test1\FYP_HumanTracking_Test1\FYP_HumanTracking_Test1.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MainSource.cpp
+         MainSource.cpp
+     1>MainSource.cpp(2): fatal error C1083: Cannot open include file: 'opencv\cv.hpp': No such file or directory
+     1>Done Building Project "E:\Final Year\project\human tracking\coding\VS_OpenCV\FYP_HumanTracking_Test1\FYP_HumanTracking_Test1\FYP_HumanTracking_Test1.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.37
