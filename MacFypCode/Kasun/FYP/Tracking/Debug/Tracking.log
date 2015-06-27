@@ -1,0 +1,16 @@
+﻿Build started 6/27/2015 11:39:57 AM.
+     1>Project "E:\Final Year\project\human tracking\coding\VS_OpenCV\FYP\Tracking\Tracking.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\OpenCV2410\opencv\sources\include\opencv /IC:\OpenCV2410\opencv\sources\include\opencv2 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp MultipleMomentMultiplePredict.cpp MultipleMomentOnePredict.cpp TrackingObject.cpp
+         TrackingObject.cpp
+     1>e:\final year\project\human tracking\coding\vs_opencv\fyp\tracking\models.h(4): fatal error C1083: Cannot open include file: 'opencv2/core/core.hpp': No such file or directory
+         MultipleMomentOnePredict.cpp
+         MultipleMomentMultiplePredict.cpp
+         Main.cpp
+     1>e:\final year\project\human tracking\coding\vs_opencv\fyp\tracking\main.cpp(3): fatal error C1083: Cannot open include file: 'opencv2/highgui/highgui.hpp': No such file or directory
+         Generating Code...
+     1>Done Building Project "E:\Final Year\project\human tracking\coding\VS_OpenCV\FYP\Tracking\Tracking.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.56
