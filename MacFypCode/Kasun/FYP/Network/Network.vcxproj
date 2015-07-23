@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EdgedNode.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Network.cpp" />
     <ClCompile Include="Node.cpp" />
