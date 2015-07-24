@@ -25,37 +25,42 @@ Node Graph::getNode(int node_id)
 bool Graph::addNode(Node node)
 {
 	Nodes.insert(std::map<int, Node>::value_type(node.Id, node));
-	return false;
+	return true;
 }
 
 bool Graph::editNode(Node node)
 {
-	return false;
+	Nodes[node.Id].IP = node.IP;
+	Nodes[node.Id].Location = node.Location;
+	Nodes[node.Id].PossibleProfiles = node.PossibleProfiles;
+	Nodes[node.Id].Type = node.Type;
+	return true;
 }
 
 bool Graph::deleteNode(int node_id)
 {
+	Nodes.erase(node_id);
 	return false;
 }
 
-std::map<int, std::vector<int>> Graph::getAdgecencyList()
+std::map<int, std::map<int, EdgedNode>> Graph::getAdgecencyList()
 {
-	std::map<int, std::vector<int>> returnMap;
-	return returnMap;
+	return Graph::Edges;
 }
 
-std::vector<int> Graph::getNeighbours(int base_node_id)
+std::map<int, EdgedNode> Graph::getNeighbours(int base_node_id)
 {
-	std::vector<int> returnVector;
-	return returnVector;
+	return Graph::Edges[base_node_id];
 }
 
-bool Graph::addNeighbour(int base_node_id, Node new_node)
+bool Graph::addNeighbour(int base_node_id, Node new_node, int location_in_metrix)
 {
-	return false;
+	Graph::addNode(new_node);
+
+	return true;
 }
 
-bool Graph::addNeighbour(int base_node_id, int new_node_id)
+bool Graph::addNeighbour(int base_node_id, int new_node_id, int location_in_metrix)
 {
 	return false;
 }
