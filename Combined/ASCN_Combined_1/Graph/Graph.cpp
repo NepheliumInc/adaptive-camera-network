@@ -2,9 +2,19 @@
 #include "Graph.h"
 #include <stdexcept>
 
-using namespace NetworkGraph;
+using namespace graph;
 
 Graph::Graph(){}
+
+bool Graph::isConfigured()
+{
+	return true;
+}
+
+void Graph::initGraph()
+{
+
+}
 
 std::vector<Node> Graph::getAllNodes()
 {

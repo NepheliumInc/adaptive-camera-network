@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Graph.h"
 
-using namespace NetworkGraph;
+using namespace graph;
 
 Node::Node(){}
 
