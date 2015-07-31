@@ -2,7 +2,7 @@
 #include <vector>
 #include <map>
 
-namespace NetworkGraph{
+namespace graph{
 	class Graph;
 	class Node;
 	class EdgedNode;
@@ -19,6 +19,18 @@ namespace NetworkGraph{
 	public:
 		Graph();
 		~Graph();
+
+		/*
+		check whether graph is already configured
+		returns : boolean
+		*/
+		bool isConfigured();
+
+		/*
+		initialte graph data structure by retreaving data from data source
+		*/
+		void initGraph();
+
 		/*
 		get all nodes in Graph space.
 		returns	: vector<model::Node objects>
