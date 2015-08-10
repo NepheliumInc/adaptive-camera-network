@@ -26,3 +26,7 @@
 *.exe
 *.out
 *.app
+*.tlog
+*.log
+*.cache
+*.opensdf

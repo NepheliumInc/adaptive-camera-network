@@ -1,18 +1,27 @@
-﻿Build started 7/31/2015 1:27:32 AM.
+﻿Build started 8/11/2015 1:15:01 AM.
      1>Project "E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\Combined\ASCN_Combined_1\Graph\Graph.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D GRAPH_EXPORTS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt EdgedNode.cpp Graph.cpp Node.cpp
-         Node.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D GRAPH_EXPORTS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt Graph.cpp Node.cpp
          Graph.cpp
-         EdgedNode.cpp
+     1>Graph.cpp(28): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory0(592): warning C4503: 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Insert_hint' : decorated name length exceeded, name was truncated
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=std::vector<std::vector<std::pair<std::string,int>,std::allocator<std::pair<std::string,int>>>,std::allocator<std::vector<std::pair<std::string,int>,std::allocator<std::pair<std::string,int>>>>>
+         ,            _Pr=std::less<std::string>
+         ,            _Alloc=std::allocator<std::pair<const std::string,std::vector<std::vector<std::pair<std::string,int>,std::allocator<std::pair<std::string,int>>>,std::allocator<std::vector<std::pair<std::string,int>,std::allocator<std::pair<std::string,int>>>>>>>
+                 ]
+         Generating Code...
+         Compiling...
+         Node.cpp
          Generating Code...
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\Combined\ASCN_Combined_1\x64\Debug\Graph.lib" /NOLOGO /MACHINE:X64 x64\Debug\EdgedNode.obj
-         x64\Debug\Graph.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\Combined\ASCN_Combined_1\x64\Debug\Graph.lib" /NOLOGO /MACHINE:X64 x64\Debug\Graph.obj
          x64\Debug\Node.obj
          Graph.vcxproj -> E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\Combined\ASCN_Combined_1\x64\Debug\Graph.lib
      1>Done Building Project "E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\Combined\ASCN_Combined_1\Graph\Graph.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:13.86
+Time Elapsed 00:00:05.05
