@@ -77,5 +77,9 @@ unsigned int __stdcall mythread(void* data)
 	currentNodePtr->ThreadId = GetCurrentThreadId();
 	string VideoLink = currentNodePtr->IP;
 
+
+
+
+
 	return 0;
 }
