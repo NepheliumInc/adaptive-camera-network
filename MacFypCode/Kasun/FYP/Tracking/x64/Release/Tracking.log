@@ -1,5 +1,5 @@
-﻿Build started 7/14/2015 3:32:21 PM.
-     1>Project "E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\MacFypCode\Kasun\FYP\Tracking\Tracking.vcxproj" on node 2 (Build target(s)).
+﻿Build started 8/11/2015 1:46:01 AM.
+     1>Project "E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\MacFypCode\Kasun\FYP\Tracking\Tracking.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\OpenCV2410\opencv\build\include /IC:\OpenCV2410\opencv\build\include\opencv /IC:\OpenCV2410\opencv\build\include\opencv2 /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt Main.cpp MultipleMomentMultiplePredict.cpp MultipleMomentOnePredict.cpp TrackingObject.cpp
          Main.cpp
@@ -23,8 +23,8 @@
          Generating code
          Finished generating code
          Tracking.vcxproj -> E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\MacFypCode\Kasun\FYP\x64\Release\Tracking.exe
-     1>Done Building Project "E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\MacFypCode\Kasun\FYP\Tracking\Tracking.vcxproj" (Build target(s)).
+     1>Done Building Project "E:\Final Year\project\human tracking\coding\Git\fork\adaptive-camera-network\MacFypCode\Kasun\FYP\Tracking\Tracking.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:18.91
+Time Elapsed 00:00:13.95
