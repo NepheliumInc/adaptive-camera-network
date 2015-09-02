@@ -150,6 +150,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TrackingObject.cpp" />
+    <ClCompile Include="VideoProcessing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt" />
@@ -158,6 +160,10 @@
     <ProjectReference Include="..\Graph\Graph.vcxproj">
       <Project>{d33a9565-9b7c-4726-9511-471342fa8bb3}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Models.h" />
+    <ClInclude Include="VideoProcessing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

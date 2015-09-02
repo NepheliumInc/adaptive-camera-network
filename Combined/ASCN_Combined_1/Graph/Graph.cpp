@@ -14,9 +14,9 @@ bool Graph::isConfigured()
 
 int Graph::initGraph()
 {
-	addNode(Node("C001", "start", "1.1.1.1", "GR1"));
-	addNode(Node("C002", "normal", "1.1.1.2", "GR2"));
-	addNode(Node("C003", "normal", "1.1.1.3", "GR3"));
+	addNode(Node("C001", "start", "E:/Final Year/project/human tracking/coding/VS_OpenCV/video/cctv.mp4", "GR1"));
+	addNode(Node("C002", "normal", "E:/Final Year/project/human tracking/coding/VS_OpenCV/video/test0.mp4", "GR2"));
+	addNode(Node("C003", "normal", "E:/Final Year/project/human tracking/coding/VS_OpenCV/video/test1.mp4", "GR3"));
 
 	addNeighbour("C001", "C002", 8, 1);
 	addNeighbour("C002", "C001", 2, 1);
