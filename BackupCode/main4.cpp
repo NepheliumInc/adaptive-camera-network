@@ -1,9 +1,9 @@
-#include <QCoreApplication>
-#include <QDirIterator>
-#include <QDir>
-#include <QDebug>
-#include <QFileInfo>
-#include <QStringList>
+#include <QtCore\qcoreapplication.h>
+#include <QtCore\QDirIterator>
+#include <QtCore\QDir>
+#include <QtCore\QDebug>
+#include <QtCore\QFileInfo>
+#include <QtCore\QStringList>
 
 
 #include <opencv2/core/core.hpp>
@@ -87,7 +87,7 @@ void addNewPictoDB(string fileName, ColorMoments colorMoments){
 }
 
 
-void main(int argc, char *argv[])
+void main4t(int argc, char *argv[])
 {
 	//QCoreApplication app(argc, argv);
 

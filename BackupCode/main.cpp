@@ -1,6 +1,8 @@
-#include "qttest3.h"
 
 #include <QtWidgets/QApplication>
+#include <QtGui/qimage.h>
+#include <QtWidgets\qlabel.h>
+
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
